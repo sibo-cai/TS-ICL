@@ -250,7 +250,7 @@ if __name__ == '__main__':
             args.model_id,
             args.model,
             # args.data,
-            'TSpfn',
+            'tsicl',
             args.features,
             args.seq_len,
             args.label_len,
