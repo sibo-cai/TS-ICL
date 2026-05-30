@@ -19,7 +19,7 @@ def data_provider(args, flag):
     data_loader_list = []
 
     if args.data == 'tsicl':
-        for f in sorted(glob.glob(f"{args.root_path}/*_{flag}.pt")):
+        for f in sorted(glob.glob(f"{args.root_path}/*_{flag}.npy")):
             f = os.path.basename(f)
             terms = f.split('_')
             if len(terms) != 5:

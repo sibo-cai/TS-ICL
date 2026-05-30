@@ -24,11 +24,11 @@ class Dataset_tsicl(Dataset):
 
     def __read_data__(self):
         # self.scaler = StandardScaler()
-        data = torch.load(os.path.join(self.root_path, self.data_path), map_location=torch.device('cpu')) # [n_tables, n_samples, sample]
+        data = np.load(os.path.join(self.root_path, self.data_path), mmap_mode='r') # [n_tables, n_samples, sample]
         # print('samples shape:', samples.shape)
 
         self.n_tables = data.shape[0]
-        self.data = data.numpy()
+        self.data = data
 
     def __getitem__(self, index):
         seq_x = self.data[index, :, :self.seq_len]

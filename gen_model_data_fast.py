@@ -115,10 +115,11 @@ def generate_model_data(args, context_len):
 
     save_file = os.path.join(
         args.output_dir,
-        f"model_data_{context_len+1}_{context_len}_{args.flag}.pt"
+        f"model_data_{context_len+1}_{context_len}_{args.flag}.npy"
     )
 
-    torch.save(datasets, save_file)
+    # torch.save(datasets, save_file)
+    np.save(save_file, datasets.numpy())
     print(f"Saved: {save_file}, shape={datasets.shape}")
 
 
